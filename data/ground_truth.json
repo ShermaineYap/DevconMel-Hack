@@ -1,0 +1,146 @@
+{
+  "exceptions": [
+    {
+      "cause": "missing_ledger_entry",
+      "refs": [
+        "ch_0c801f97b76843"
+      ]
+    },
+    {
+      "cause": "duplicate_charge",
+      "refs": [
+        "ch_9dc275c54898f4"
+      ]
+    },
+    {
+      "cause": "duplicate_charge",
+      "refs": [
+        "ch_25d8d9f2b87f6e"
+      ]
+    },
+    {
+      "cause": "missing_ledger_entry",
+      "refs": [
+        "ch_d54dbcecc24b35"
+      ]
+    },
+    {
+      "cause": "refund_not_booked",
+      "refs": [
+        "re_6fa5ca9f7ac8cb"
+      ]
+    },
+    {
+      "cause": "refund_not_booked",
+      "refs": [
+        "re_650e6e92df4978"
+      ]
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:po_dc2efcd1b237b5"
+      ],
+      "fees": 8851
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:po_1cad303877ebce"
+      ],
+      "fees": 12186
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:po_4b0f39d234b9ae"
+      ],
+      "fees": 19659
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:po_6fbf3eea29130a"
+      ],
+      "fees": 10619
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:po_35755ade7c55dc"
+      ],
+      "fees": 10052
+    },
+    {
+      "cause": "payout_in_transit",
+      "refs": [
+        "po_35755ade7c55dc"
+      ]
+    },
+    {
+      "cause": "processor_fee",
+      "refs": [
+        "fees:pending:stripe"
+      ],
+      "fees": 4816
+    },
+    {
+      "cause": "transposition",
+      "refs": [
+        "LED-0009",
+        "ch_6489a30fd54c7b"
+      ]
+    },
+    {
+      "cause": "ledger_without_payment",
+      "refs": [
+        "LED-0069"
+      ]
+    },
+    {
+      "cause": "rounding",
+      "refs": [
+        "LED-0085",
+        "ch_297c79bfbdabe8"
+      ]
+    }
+  ],
+  "fuzzy_matches": [
+    [
+      "LED-0011",
+      "ch_0815fe85df2fbd"
+    ],
+    [
+      "LED-0063",
+      "ch_31645ae36f2e1e"
+    ],
+    [
+      "LED-0114",
+      "ch_ebd4d3fd81b6ee"
+    ]
+  ],
+  "fuzzy_bank_matches": [
+    [
+      "po_1cad303877ebce",
+      "BNK-0004"
+    ]
+  ],
+  "seed": 42,
+  "plan": {
+    "n_charges": 120,
+    "missing_ledger_entry": 2,
+    "duplicate_charge": 2,
+    "refund_booked": 1,
+    "refund_small_unbooked": 1,
+    "refund_large_unbooked": 1,
+    "transposition": 1,
+    "rounding": 1,
+    "missing_reference": 3,
+    "ledger_without_payment": 1,
+    "fee_bps": 300,
+    "fee_fixed": 100,
+    "year": 2026,
+    "month": 10,
+    "extra": {}
+  }
+}

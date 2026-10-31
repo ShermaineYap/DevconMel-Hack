@@ -1,0 +1,29 @@
+# Where the crew reads from. Paths are relative to this file.
+# Curveball-ready: add another processor under extra_processors and re-run.
+
+period: "2026-10"
+
+sources:
+  ledger:
+    adapter: ledger_csv
+    path: data/ledger.csv
+
+  processor:
+    adapter: stripe_csv          # switch to `stripe_api` to pull live from Stripe TEST mode
+    name: stripe
+    path: data/stripe_balance_transactions.csv
+    # adapter: stripe_api
+    # key_env: STRIPE_SECRET_KEY # must be sk_test_...; live keys are refused
+
+  bank:
+    adapter: bank_csv
+    path: data/bank_statement.csv
+
+  extra_processors: []
+  # Example for a wallet export (TnG eWallet / GrabPay / PayPal):
+  # - adapter: generic_csv
+  #   name: tng
+  #   path: data/tng_export.csv
+  #   mapping: {id: "Transaction ID", created: "Date", amount: "Amount", fee: "MDR Fee",
+  #             type: "Type", order_id: "Merchant Ref", customer: "Payer", payout_id: "Settlement ID"}
+  #   type_map: {Payment: charge, Refund: refund, Settlement: payout}

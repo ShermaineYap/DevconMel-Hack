@@ -1,0 +1,137 @@
+id,date,description,reference,amount,kind,method,customer
+LED-0001,2026-10-01,Sale ORD-10033 - Kavitha Chong - Butter cake,ORD-10033,210.90,sale,card,Kavitha Chong
+LED-0002,2026-10-01,Sale ORD-10036 - Hafiz Ng - Party tray,ORD-10036,227.20,sale,card,Hafiz Ng
+LED-0003,2026-10-01,Sale ORD-10044 - Ravi Nair - Gift hamper,ORD-10044,234.70,sale,card,Ravi Nair
+LED-0004,2026-10-01,Sale ORD-10117 - Zhi Wei Osman - Kopi beans 500g,ORD-10117,115.30,sale,card,Zhi Wei Osman
+LED-0005,2026-10-02,Rent - shop lot October,,-1500.00,expense,bank,
+LED-0006,2026-10-02,Sale ORD-10017 - Kavitha Ismail - Party tray,ORD-10017,9.90,sale,card,Kavitha Ismail
+LED-0007,2026-10-02,Sale ORD-10043 - Shalini Goh - Seri muka slab,ORD-10043,85.30,sale,card,Shalini Goh
+LED-0008,2026-10-02,Sale ORD-10059 - Farid Wong - Party tray,ORD-10059,222.00,sale,card,Farid Wong
+LED-0009,2026-10-02,Sale ORD-10066 - Siti Hassan - Pandan cake,ORD-10066,76.00,sale,card,Siti Hassan
+LED-0010,2026-10-02,Sale ORD-10081 - Zhi Wei Raj - Party tray,ORD-10081,152.80,sale,card,Zhi Wei Raj
+LED-0011,2026-10-03,Sale - Liyana Osman (kaya jar),,102.20,sale,card,Liyana Osman
+LED-0012,2026-10-03,Sale ORD-10014 - Arjun Yusof - Butter cake,ORD-10014,36.30,sale,card,Arjun Yusof
+LED-0013,2026-10-03,Sale ORD-10048 - Farid Pillai - Gift hamper,ORD-10048,104.60,sale,card,Farid Pillai
+LED-0014,2026-10-03,Sale ORD-10087 - Jun Hao Nair - Butter cake,ORD-10087,139.40,sale,card,Jun Hao Nair
+LED-0015,2026-10-04,Sale ORD-10007 - Ravi Chong - Pandan cake,ORD-10007,128.70,sale,card,Ravi Chong
+LED-0016,2026-10-04,Sale ORD-10047 - Hui Min Rahman - Coffee subscription,ORD-10047,223.90,sale,card,Hui Min Rahman
+LED-0017,2026-10-04,Sale ORD-10054 - Amir Rahman - Onde-onde dozen,ORD-10054,104.20,sale,card,Amir Rahman
+LED-0018,2026-10-04,Sale ORD-10069 - Jia Hui Abdullah - Party tray,ORD-10069,68.40,sale,card,Jia Hui Abdullah
+LED-0019,2026-10-04,Sale ORD-10086 - Kar Wai Aziz - Butter cake,ORD-10086,19.10,sale,card,Kar Wai Aziz
+LED-0020,2026-10-04,Sale ORD-10102 - Aisyah Lee - Kopi beans 500g,ORD-10102,64.80,sale,card,Aisyah Lee
+LED-0021,2026-10-05,Cash sale - weekend market,,385.00,sale,cash,
+LED-0022,2026-10-05,Sale ORD-10022 - Ravi Yusof - Kopi beans 500g,ORD-10022,87.00,sale,card,Ravi Yusof
+LED-0023,2026-10-05,Sale ORD-10049 - Shalini Kumar - Butter cake,ORD-10049,108.50,sale,card,Shalini Kumar
+LED-0024,2026-10-05,Sale ORD-10064 - Priya Menon - Pandan cake,ORD-10064,181.20,sale,card,Priya Menon
+LED-0025,2026-10-05,Sale ORD-10085 - Arjun Goh - Onde-onde dozen,ORD-10085,36.00,sale,card,Arjun Goh
+LED-0026,2026-10-05,Sale ORD-10092 - Kavitha Goh - Party tray,ORD-10092,136.50,sale,card,Kavitha Goh
+LED-0027,2026-10-05,Sale ORD-10120 - Siti Teh - Gift hamper,ORD-10120,107.20,sale,card,Siti Teh
+LED-0028,2026-10-06,Refund ORD-10036 - Hafiz Ng,ORD-10036,-227.20,refund,card,Hafiz Ng
+LED-0029,2026-10-06,Sale ORD-10019 - Nadia Tan - Party tray,ORD-10019,52.70,sale,card,Nadia Tan
+LED-0030,2026-10-06,Sale ORD-10040 - Darren Osman - Kuih box,ORD-10040,134.40,sale,card,Darren Osman
+LED-0031,2026-10-06,Sale ORD-10083 - Amir Goh - Coffee subscription,ORD-10083,211.70,sale,card,Amir Goh
+LED-0032,2026-10-07,Sale ORD-10021 - Wei Ming Kumar - Seri muka slab,ORD-10021,112.80,sale,card,Wei Ming Kumar
+LED-0033,2026-10-07,Sale ORD-10024 - Amir Yusof - Seri muka slab,ORD-10024,165.70,sale,card,Amir Yusof
+LED-0034,2026-10-07,Sale ORD-10045 - Hafiz Nair - Butter cake,ORD-10045,216.60,sale,card,Hafiz Nair
+LED-0035,2026-10-07,Sale ORD-10057 - Zhi Wei Abdullah - Kaya jar,ORD-10057,36.60,sale,card,Zhi Wei Abdullah
+LED-0036,2026-10-07,Sale ORD-10074 - Hafiz Ismail - Kaya jar,ORD-10074,101.20,sale,card,Hafiz Ismail
+LED-0037,2026-10-07,Sale ORD-10099 - Kavitha Aziz - Party tray,ORD-10099,238.20,sale,card,Kavitha Aziz
+LED-0038,2026-10-08,Sale ORD-10006 - Shalini Aziz - Kaya jar,ORD-10006,65.10,sale,card,Shalini Aziz
+LED-0039,2026-10-09,Sale ORD-10026 - Kavitha Lee - Onde-onde dozen,ORD-10026,146.00,sale,card,Kavitha Lee
+LED-0040,2026-10-09,Sale ORD-10035 - Mei Ling Abdullah - Party tray,ORD-10035,102.90,sale,card,Mei Ling Abdullah
+LED-0041,2026-10-09,Sale ORD-10065 - Ravi Aziz - Coffee subscription,ORD-10065,189.90,sale,card,Ravi Aziz
+LED-0042,2026-10-10,Sale ORD-10016 - Hafiz Ng - Party tray,ORD-10016,50.90,sale,card,Hafiz Ng
+LED-0043,2026-10-10,Sale ORD-10038 - Ravi Hassan - Coffee subscription,ORD-10038,249.50,sale,card,Ravi Hassan
+LED-0044,2026-10-10,Sale ORD-10052 - Wei Ming Osman - Party tray,ORD-10052,189.00,sale,card,Wei Ming Osman
+LED-0045,2026-10-11,Sale ORD-10015 - Aisyah Wong - Seri muka slab,ORD-10015,38.20,sale,card,Aisyah Wong
+LED-0046,2026-10-11,Sale ORD-10042 - Kar Wai Raj - Gift hamper,ORD-10042,51.30,sale,card,Kar Wai Raj
+LED-0047,2026-10-11,Sale ORD-10104 - Hui Min Ng - Butter cake,ORD-10104,75.00,sale,card,Hui Min Ng
+LED-0048,2026-10-11,Sale ORD-10105 - Aisyah Ng - Kopi beans 500g,ORD-10105,110.10,sale,card,Aisyah Ng
+LED-0049,2026-10-12,Sale ORD-10018 - Jun Hao Abdullah - Party tray,ORD-10018,24.80,sale,card,Jun Hao Abdullah
+LED-0050,2026-10-12,Sale ORD-10020 - Nadia Lee - Coffee subscription,ORD-10020,217.10,sale,card,Nadia Lee
+LED-0051,2026-10-12,Sale ORD-10032 - Hafiz Kumar - Kaya jar,ORD-10032,196.80,sale,card,Hafiz Kumar
+LED-0052,2026-10-12,Sale ORD-10063 - Jia Hui Osman - Pandan cake,ORD-10063,55.50,sale,card,Jia Hui Osman
+LED-0053,2026-10-13,Sale ORD-10009 - Hui Min Menon - Kuih box,ORD-10009,161.40,sale,card,Hui Min Menon
+LED-0054,2026-10-13,Sale ORD-10028 - Nadia Chong - Onde-onde dozen,ORD-10028,146.10,sale,card,Nadia Chong
+LED-0055,2026-10-13,Sale ORD-10067 - Ravi Rahman - Pandan cake,ORD-10067,25.80,sale,card,Ravi Rahman
+LED-0056,2026-10-13,Sale ORD-10093 - Arjun Chong - Onde-onde dozen,ORD-10093,179.70,sale,card,Arjun Chong
+LED-0057,2026-10-13,Sale ORD-10106 - Farid Lim - Seri muka slab,ORD-10106,214.30,sale,card,Farid Lim
+LED-0058,2026-10-13,Sale ORD-10110 - Hafiz Pillai - Kuih box,ORD-10110,225.10,sale,card,Hafiz Pillai
+LED-0059,2026-10-13,Sale ORD-10116 - Zhi Wei Goh - Kopi beans 500g,ORD-10116,199.40,sale,card,Zhi Wei Goh
+LED-0060,2026-10-14,Sale ORD-10011 - Wei Ming Lim - Pandan cake,ORD-10011,199.70,sale,card,Wei Ming Lim
+LED-0061,2026-10-14,Sale ORD-10068 - Arjun Kumar - Onde-onde dozen,ORD-10068,51.80,sale,card,Arjun Kumar
+LED-0062,2026-10-14,Sale ORD-10079 - Priya Lim - Seri muka slab,ORD-10079,195.70,sale,card,Priya Lim
+LED-0063,2026-10-15,Sale - Jun Nair (kopi beans 500g),,224.80,sale,card,Jun Hao Nair
+LED-0064,2026-10-15,Sale ORD-10002 - Jia Hui Rahman - Kuih box,ORD-10002,249.80,sale,card,Jia Hui Rahman
+LED-0065,2026-10-15,Sale ORD-10012 - Mei Ling Tan - Party tray,ORD-10012,233.90,sale,card,Mei Ling Tan
+LED-0066,2026-10-15,Sale ORD-10029 - Kavitha Yusof - Kuih box,ORD-10029,142.30,sale,card,Kavitha Yusof
+LED-0067,2026-10-15,Sale ORD-10119 - Wei Ming Teh - Seri muka slab,ORD-10119,161.30,sale,card,Wei Ming Teh
+LED-0068,2026-10-16,Sale ORD-10039 - Wei Ming Pillai - Kuih box,ORD-10039,127.70,sale,card,Wei Ming Pillai
+LED-0069,2026-10-16,Sale ORD-19001 - Liyana Kumar - Kuih box,ORD-19001,51.90,sale,card,Liyana Kumar
+LED-0070,2026-10-17,Sale ORD-10082 - Zhi Wei Aziz - Kaya jar,ORD-10082,171.60,sale,card,Zhi Wei Aziz
+LED-0071,2026-10-17,Sale ORD-10096 - Shalini Tan - Seri muka slab,ORD-10096,172.90,sale,card,Shalini Tan
+LED-0072,2026-10-17,Sale ORD-10098 - Hafiz Pillai - Seri muka slab,ORD-10098,164.20,sale,card,Hafiz Pillai
+LED-0073,2026-10-17,Sale ORD-10108 - Hui Min Osman - Pandan cake,ORD-10108,178.60,sale,card,Hui Min Osman
+LED-0074,2026-10-17,Sale ORD-10112 - Arjun Osman - Kaya jar,ORD-10112,126.90,sale,card,Arjun Osman
+LED-0075,2026-10-18,Sale ORD-10025 - Hui Min Teh - Onde-onde dozen,ORD-10025,138.40,sale,card,Hui Min Teh
+LED-0076,2026-10-18,Sale ORD-10062 - Kavitha Lim - Seri muka slab,ORD-10062,238.50,sale,card,Kavitha Lim
+LED-0077,2026-10-18,Sale ORD-10080 - Shalini Lee - Kopi beans 500g,ORD-10080,216.30,sale,card,Shalini Lee
+LED-0078,2026-10-18,Sale ORD-10114 - Hafiz Yusof - Onde-onde dozen,ORD-10114,225.50,sale,card,Hafiz Yusof
+LED-0079,2026-10-19,Sale ORD-10094 - Wei Ming Tan - Kuih box,ORD-10094,153.00,sale,card,Wei Ming Tan
+LED-0080,2026-10-19,Sale ORD-10095 - Siti Goh - Coffee subscription,ORD-10095,238.60,sale,card,Siti Goh
+LED-0081,2026-10-20,Sale ORD-10030 - Arjun Ismail - Gift hamper,ORD-10030,70.90,sale,card,Arjun Ismail
+LED-0082,2026-10-20,Sale ORD-10060 - Zhi Wei Raj - Gift hamper,ORD-10060,248.20,sale,card,Zhi Wei Raj
+LED-0083,2026-10-21,Sale ORD-10001 - Aisyah Ng - Onde-onde dozen,ORD-10001,54.10,sale,card,Aisyah Ng
+LED-0084,2026-10-21,Sale ORD-10004 - Kar Wai Goh - Kuih box,ORD-10004,157.90,sale,card,Kar Wai Goh
+LED-0085,2026-10-21,Sale ORD-10034 - Hui Min Rahman - Party tray,ORD-10034,209.47,sale,card,Hui Min Rahman
+LED-0086,2026-10-21,Sale ORD-10073 - Hafiz Teh - Butter cake,ORD-10073,169.00,sale,card,Hafiz Teh
+LED-0087,2026-10-21,Sale ORD-10090 - Jia Hui Ismail - Butter cake,ORD-10090,234.10,sale,card,Jia Hui Ismail
+LED-0088,2026-10-21,Sale ORD-10101 - Amir Abdullah - Butter cake,ORD-10101,113.50,sale,card,Amir Abdullah
+LED-0089,2026-10-21,Sale ORD-10113 - Shalini Raj - Gift hamper,ORD-10113,164.60,sale,card,Shalini Raj
+LED-0090,2026-10-22,Sale ORD-10023 - Farid Menon - Coffee subscription,ORD-10023,43.20,sale,card,Farid Menon
+LED-0091,2026-10-22,Sale ORD-10075 - Hui Min Teh - Onde-onde dozen,ORD-10075,105.70,sale,card,Hui Min Teh
+LED-0092,2026-10-23,Sale ORD-10031 - Priya Osman - Gift hamper,ORD-10031,89.70,sale,card,Priya Osman
+LED-0093,2026-10-23,Sale ORD-10084 - Kar Wai Wong - Kuih box,ORD-10084,183.00,sale,card,Kar Wai Wong
+LED-0094,2026-10-23,Sale ORD-10100 - Amir Raj - Butter cake,ORD-10100,93.40,sale,card,Amir Raj
+LED-0095,2026-10-24,Sale ORD-10003 - Zhi Wei Lim - Butter cake,ORD-10003,196.60,sale,card,Zhi Wei Lim
+LED-0096,2026-10-24,Sale ORD-10053 - Mei Ling Wong - Kaya jar,ORD-10053,147.20,sale,card,Mei Ling Wong
+LED-0097,2026-10-24,Sale ORD-10061 - Kavitha Kumar - Coffee subscription,ORD-10061,47.40,sale,card,Kavitha Kumar
+LED-0098,2026-10-24,Sale ORD-10118 - Kar Wai Ismail - Seri muka slab,ORD-10118,152.70,sale,card,Kar Wai Ismail
+LED-0099,2026-10-26,Sale ORD-10005 - Nadia Ng - Kaya jar,ORD-10005,137.70,sale,card,Nadia Ng
+LED-0100,2026-10-26,Sale ORD-10058 - Liyana Raj - Coffee subscription,ORD-10058,105.90,sale,card,Liyana Raj
+LED-0101,2026-10-26,Sale ORD-10070 - Liyana Tan - Butter cake,ORD-10070,121.00,sale,card,Liyana Tan
+LED-0102,2026-10-26,Sale ORD-10076 - Jia Hui Tan - Kaya jar,ORD-10076,65.10,sale,card,Jia Hui Tan
+LED-0103,2026-10-26,Sale ORD-10088 - Hafiz Teh - Kopi beans 500g,ORD-10088,234.40,sale,card,Hafiz Teh
+LED-0104,2026-10-26,Sale ORD-10111 - Darren Rahman - Kopi beans 500g,ORD-10111,180.20,sale,card,Darren Rahman
+LED-0105,2026-10-26,Sale ORD-10115 - Zhi Wei Abdullah - Party tray,ORD-10115,249.10,sale,card,Zhi Wei Abdullah
+LED-0106,2026-10-27,Sale ORD-10027 - Nadia Osman - Kuih box,ORD-10027,180.50,sale,card,Nadia Osman
+LED-0107,2026-10-27,Sale ORD-10097 - Zhi Wei Aziz - Kopi beans 500g,ORD-10097,217.20,sale,card,Zhi Wei Aziz
+LED-0108,2026-10-28,Sale ORD-10010 - Priya Menon - Gift hamper,ORD-10010,143.80,sale,card,Priya Menon
+LED-0109,2026-10-28,Sale ORD-10037 - Mei Ling Nair - Butter cake,ORD-10037,204.10,sale,card,Mei Ling Nair
+LED-0110,2026-10-28,Sale ORD-10056 - Mei Ling Goh - Coffee subscription,ORD-10056,157.00,sale,card,Mei Ling Goh
+LED-0111,2026-10-29,Sale ORD-10050 - Zhi Wei Chong - Coffee subscription,ORD-10050,126.30,sale,card,Zhi Wei Chong
+LED-0112,2026-10-29,Sale ORD-10089 - Liyana Chong - Onde-onde dozen,ORD-10089,234.30,sale,card,Liyana Chong
+LED-0113,2026-10-29,Sale ORD-10091 - Farid Hassan - Coffee subscription,ORD-10091,231.90,sale,card,Farid Hassan
+LED-0114,2026-10-30,Sale - Hafiz Yusof (onde-onde dozen),,228.60,sale,card,Hafiz Yusof
+LED-0115,2026-10-30,Sale ORD-10008 - Farid Pillai - Party tray,ORD-10008,157.10,sale,card,Farid Pillai
+LED-0116,2026-10-30,Sale ORD-10013 - Farid Kumar - Kopi beans 500g,ORD-10013,194.80,sale,card,Farid Kumar
+LED-0117,2026-10-30,Sale ORD-10046 - Siti Pillai - Butter cake,ORD-10046,140.30,sale,card,Siti Pillai
+LED-0118,2026-10-30,Sale ORD-10071 - Siti Raj - Kaya jar,ORD-10071,242.60,sale,card,Siti Raj
+LED-0119,2026-10-30,Sale ORD-10072 - Nadia Kumar - Party tray,ORD-10072,124.30,sale,card,Nadia Kumar
+LED-0120,2026-10-30,Sale ORD-10077 - Ravi Tan - Party tray,ORD-10077,19.40,sale,card,Ravi Tan
+LED-0121,2026-10-30,Sale ORD-10078 - Hafiz Aziz - Onde-onde dozen,ORD-10078,202.00,sale,card,Hafiz Aziz
+LED-0122,2026-10-30,Sale ORD-10103 - Nadia Aziz - Pandan cake,ORD-10103,23.30,sale,card,Nadia Aziz
+FIX-053EF53B,2026-10-31,"Card processing fees, po_4b0f39d234b9ae (32 txns)",po_4b0f39d234b9ae,-196.59,fee,card,applied by policy
+FIX-0BC5D70B,2026-10-31,"Card processing fees, pending:stripe (9 txns)",pending:stripe,-48.16,fee,card,applied by policy
+FIX-2A8AF88D,2026-10-31,Duplicate charge ch_9dc275c54898f4 on ORD-10002: refund owed to Jia Hui Rahman,ORD-10002,249.80,liability,card,applied by Owner
+FIX-7BE255E6,2026-10-31,Record missing sale ORD-10051 - Farid Hassan (ch_0c801f97b76843),ORD-10051,243.90,sale,card,applied by Owner
+FIX-84A88D8E,2026-10-31,Record missing sale ORD-10109 - Wei Ming Hassan (ch_d54dbcecc24b35),ORD-10109,201.80,sale,card,applied by Owner
+FIX-876F22A5,2026-10-31,"Card processing fees, po_dc2efcd1b237b5 (19 txns)",po_dc2efcd1b237b5,-88.51,fee,card,applied by policy
+FIX-95AE0C1D,2026-10-31,"Card processing fees, po_35755ade7c55dc (16 txns)",po_35755ade7c55dc,-100.52,fee,card,applied by policy
+FIX-9C1AF3BD,2026-10-31,"Correct ORD-10066: booked RM 76.00, received RM 67.00 (transposition)",ORD-10066,-9.00,adjustment,card,applied by Owner
+FIX-A11BC9C6,2026-10-31,"Card processing fees, po_1cad303877ebce (28 txns)",po_1cad303877ebce,-121.86,fee,card,applied by policy
+FIX-B379C568,2026-10-31,Duplicate charge ch_25d8d9f2b87f6e on ORD-10112: refund owed to Arjun Osman,ORD-10112,126.90,liability,card,applied by Owner
+FIX-CF312264,2026-10-31,Book refund ORD-10084 - Kar Wai Wong (re_6fa5ca9f7ac8cb),ORD-10084,-12.50,refund,card,applied by policy
+FIX-D280BC13,2026-10-31,Book refund ORD-10064 - Priya Menon (re_650e6e92df4978),ORD-10064,-181.20,refund,card,applied by Owner
+FIX-D888DDB1,2026-10-31,"Card processing fees, po_6fbf3eea29130a (21 txns)",po_6fbf3eea29130a,-106.19,fee,card,applied by policy
+FIX-ED63266E,2026-10-31,"Correct ORD-10034: booked RM 209.47, received RM 209.50 (rounding)",ORD-10034,0.03,adjustment,card,applied by policy

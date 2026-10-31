@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CloseCrew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f3ec; --card:#fffdf8; --ink:#1d1b16; --muted:#6f6a5e; --rule:#e2dccd; --rule2:#d4ccb8;
+  --green:#1f6b4a; --green-bg:#e3f0e8; --amber:#9a5b00; --amber-bg:#fbefd9; --red:#a8322a; --red-bg:#f8e1dd;
+  --blue:#24508f; --blue-bg:#e2eaf6; --shadow:0 1px 0 rgba(0,0,0,.04),0 6px 20px -12px rgba(40,30,10,.25);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15140f; --card:#1d1c16; --ink:#efe9da; --muted:#a39d8c; --rule:#2e2c24; --rule2:#3b382e;
+  --green:#6fcf9c; --green-bg:#173327; --amber:#f0b45a; --amber-bg:#352712; --red:#f08a7e; --red-bg:#3a1c18;
+  --blue:#8fb4ee; --blue-bg:#18263c; --shadow:none;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+.mono,.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px 64px}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:20px 0 16px;border-bottom:2px solid var(--ink)}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand b{font-size:22px;letter-spacing:-.02em}
+.brand span{color:var(--muted);font-size:13px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.pill.CLOSED{background:var(--green-bg);color:var(--green)} .pill.AWAITING_APPROVAL{background:var(--amber-bg);color:var(--amber)} .pill.BLOCKED{background:var(--red-bg);color:var(--red)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--rule2);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:7px;cursor:pointer}
+button:hover{border-color:var(--ink)} button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+button.ok{background:var(--green);border-color:var(--green);color:#fff} button.no{color:var(--red)}
+button:disabled{opacity:.5;cursor:wait}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;padding:26px 0 18px;border-bottom:1px solid var(--rule)}
+.hero h1{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;font-weight:600}
+.diff{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.diff .num{font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.diff .from{color:var(--muted);text-decoration:line-through;text-decoration-thickness:2px;font-size:24px}
+.narr{margin:10px 0 0;color:var(--ink);max-width:62ch}
+.bar{height:8px;border-radius:99px;background:var(--rule);overflow:hidden;margin-top:14px;display:flex}
+.bar i{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:6px}
+.legend b{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;align-content:start}
+.kpi{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow)}
+.kpi .num{font-size:26px;font-weight:600}
+.kpi small{display:block;color:var(--muted);font-size:12px}
+.crew{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:22px 0;border:1px solid var(--rule);border-radius:12px;background:var(--card);overflow:hidden;box-shadow:var(--shadow)}
+.agent{padding:12px 14px;border-right:1px solid var(--rule);position:relative;min-width:0}
+.agent:last-child{border-right:0}
+.agent .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.agent .who .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.agent .who .dot.fail{background:var(--red)}
+.agent .role{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.agent p{margin:6px 0 0;font-size:12.5px;color:var(--ink);overflow-wrap:anywhere}
+.cols{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:start}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px;color:var(--muted);font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.item{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--amber);border-radius:10px;padding:14px 16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.item.done{border-left-color:var(--green);opacity:.85}
+.item .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.item .cause{font-weight:700}
+.item .amt{font-weight:600;font-size:17px;white-space:nowrap}
+.item .why{margin:6px 0 8px}
+.item .entry{font-size:12.5px;background:var(--paper);border:1px dashed var(--rule2);border-radius:6px;padding:6px 9px;margin:6px 0}
+.item .act{font-size:12.5px;color:var(--blue);margin:4px 0}
+.item details{font-size:12.5px;color:var(--muted)} .item details li{margin:2px 0}
+.item .btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.item .id{font-size:11px;color:var(--muted)}
+.empty{padding:22px;border:1px dashed var(--rule2);border-radius:10px;color:var(--muted);text-align:center;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:7px 8px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.total td{font-weight:700;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:26px 0 0;border-bottom:1px solid var(--rule)}
+.tabs button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--muted);padding:9px 12px}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
+.tabpane{display:none;padding-top:14px} .tabpane.on{display:block}
+pre{margin:0;font:12.5px/1.55 "IBM Plex Mono",monospace;overflow:auto;max-height:520px;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px;white-space:pre}
+pre.wrap{white-space:pre-wrap}
+.add{color:var(--green)} .del{color:var(--red)} .hunk{color:var(--blue)}
+.check{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule)}
+.check .tag{font-size:11px;font-weight:700;padding:1px 7px;border-radius:4px;height:fit-content}
+.check .tag.p{background:var(--green-bg);color:var(--green)} .check .tag.f{background:var(--red-bg);color:var(--red)}
+.check small{display:block;color:var(--muted)}
+.who-input{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--muted)}
+.who-input input{font:inherit;border:1px solid var(--rule2);border-radius:6px;padding:5px 8px;background:var(--card);color:var(--ink);width:130px}
+.st{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.st.auto_fixed,.st.approved{color:var(--green)} .st.open{color:var(--amber)} .st.rejected{color:var(--red)} .st.info{color:var(--blue)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none;max-width:90vw}
+.toast.show{opacity:1}
+footer{margin-top:40px;color:var(--muted);font-size:12px;border-top:1px solid var(--rule);padding-top:12px}
+form.up{display:grid;gap:10px;max-width:520px} form.up label{font-size:13px;display:grid;gap:4px}
+@media (max-width:900px){.hero,.cols{grid-template-columns:1fr}.crew{grid-template-columns:repeat(2,1fr)}.agent{border-bottom:1px solid var(--rule)}}
+@media (max-width:520px){.diff .num{font-size:30px}.crew{grid-template-columns:1fr}.agent{border-right:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><b>CloseCrew</b><span id="period">month-end close</span><span id="status" class="pill">loading</span></div>
+    <div class="actions">
+      <label class="who-input">Approving as <input id="who" value="Owner" maxlength="40"></label>
+      <button class="primary" id="runBtn" onclick="runCrew()">Run the crew</button>
+      <button onclick="resetDemo()" title="Reseed the fake month and clear decisions">Reset demo</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Books vs money · unexplained difference</h1>
+      <div class="diff"><span class="num from" id="dBefore">–</span><span class="num" id="dAfter">–</span></div>
+      <p class="narr" id="narr"></p>
+      <div class="bar" id="bar"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><small>Pairs matched</small><span class="num" id="kMatched">–</span><small id="kMatchedSub"></small></div>
+      <div class="kpi"><small>Fixed inside your policy</small><span class="num" id="kAuto">–</span><small id="kAutoSub"></small></div>
+      <div class="kpi"><small>Waiting for you</small><span class="num" id="kWait">–</span><small id="kWaitSub"></small></div>
+      <div class="kpi"><small>Auditor checks</small><span class="num" id="kChecks">–</span><small id="kChecksSub">independent re-computation</small></div>
+    </div>
+  </section>
+
+  <section class="crew" id="crew"></section>
+
+  <section class="cols">
+    <div>
+      <h2><span>Needs your decision</span><span class="mono" id="queueCount"></span></h2>
+      <div id="queue"></div>
+    </div>
+    <div>
+      <h2>Reconciliation statement</h2>
+      <div class="panel"><table id="stmt"></table></div>
+      <p style="font-size:12.5px;color:var(--muted)">Downloads: <a href="/download/ledger_reconciled.csv">reconciled ledger</a> · <a href="/download/ledger.diff">ledger diff</a> · <a href="/download/close_report.md">close report</a> · <a href="/download/AGENT_LOG.md">agent log</a></p>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs">
+    <button data-t="checks" class="on">Auditor checks</button>
+    <button data-t="diff">Ledger diff</button>
+    <button data-t="all">All exceptions</button>
+    <button data-t="log">Agent work log</button>
+    <button data-t="report">Close report</button>
+    <button data-t="upload">Try your own files</button>
+  </nav>
+  <div class="tabpane on" id="t-checks"></div>
+  <div class="tabpane" id="t-diff"><pre id="diff"></pre></div>
+  <div class="tabpane" id="t-all"><div class="panel"><table id="allx"></table></div></div>
+  <div class="tabpane" id="t-log"><pre id="log"></pre></div>
+  <div class="tabpane" id="t-report"><pre class="wrap" id="report"></pre></div>
+  <div class="tabpane" id="t-upload">
+    <div class="panel">
+      <p style="margin-top:0">Run the crew on your own anonymised exports (same columns as the sample files in <span class="mono">data/</span>). Files replace the demo month on this server; use <b>Reset demo</b> to go back.</p>
+      <form class="up" id="upForm">
+        <label>Ledger CSV <input type="file" name="ledger" accept=".csv" required></label>
+        <label>Processor balance transactions CSV <input type="file" name="processor" accept=".csv" required></label>
+        <label>Bank statement CSV <input type="file" name="bank" accept=".csv" required></label>
+        <div><button class="primary" type="submit">Run crew on my files</button></div>
+      </form>
+    </div>
+  </div>
+
+  <footer>Fake data and sandbox payments only. Every change is a reviewable diff; nothing outside the owner's policy happens without a human. Not tax or investment advice.</footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const LABELS={processor_fee:"Card processing fees not booked",missing_ledger_entry:"Sale paid but never entered",duplicate_charge:"Customer charged twice",refund_not_booked:"Refund not in the books",transposition:"Typo: digits swapped",rounding:"FX / rounding difference",amount_mismatch:"Amount differs",ledger_without_payment:"Card sale with no payment",refund_without_processor:"Refund never processed",ambiguous_match:"Could match several payments",processor_adjustment:"Processor adjustment",ledger_fee_unlinked:"Fee booked against no payout",payout_in_transit:"Payout still in transit",payout_missing:"Payout missing from bank",bank_unmatched_processor:"Unexplained processor deposit"};
+const AGENTS=[["Ingest","reads sources"],["Matcher","pairs rows"],["Investigator","names causes"],["Fixer","drafts diffs"],["Auditor","proves it"],["Explainer","tells you"]];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rm=c=>(c<0?"-":"")+"RM "+(Math.abs(c)/100).toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+let S=null;
+try{const w=localStorage.getItem("cc_who");if(w)$("who").value=w}catch(e){}
+$("who").addEventListener("change",()=>{try{localStorage.setItem("cc_who",$("who").value)}catch(e){}});
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),3200)}
+async function api(path,opts){const r=await fetch(path,opts);if(!r.ok){let m=r.statusText;try{m=(await r.json()).detail||m}catch(e){}throw new Error(m)}return r.headers.get("content-type")?.includes("json")?r.json():r.text()}
+
+function render(s){
+  S=s;const m=s.summary;
+  $("period").textContent="Demo shop · "+new Date(s.period+"-01").toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+  const st=$("status");st.className="pill "+m.status;st.textContent=m.status.replace("_"," ").toLowerCase();
+  $("dBefore").textContent=rm(m.diff_before);$("dAfter").textContent=rm(m.diff_after);
+  $("dAfter").style.color=m.diff_after===0?"var(--green)":"var(--amber)";
+  $("narr").textContent=s.narration;
+  const xs=s.exceptions.filter(x=>x.side==="processor");
+  const tot=xs.reduce((a,x)=>a+Math.abs(x.impact),0)||1;
+  const grp={fixed:0,open:0,other:0};
+  xs.forEach(x=>{const k=(x.status==="auto_fixed"||x.status==="approved")?"fixed":x.status==="open"?"open":"other";grp[k]+=Math.abs(x.impact)});
+  $("bar").innerHTML=`<i style="width:${grp.fixed/tot*100}%;background:var(--green)"></i><i style="width:${grp.open/tot*100}%;background:var(--amber)"></i><i style="width:${grp.other/tot*100}%;background:var(--muted)"></i>`;
+  $("legend").innerHTML=`<span><b style="background:var(--green)"></b>fixed ${rm(grp.fixed)}</span><span><b style="background:var(--amber)"></b>waiting ${rm(grp.open)}</span><span><b style="background:var(--muted)"></b>rejected / info ${rm(grp.other)}</span><span>100% of the gap traced to a cause</span>`;
+  $("kMatched").textContent=m.matched_total;$("kMatchedSub").textContent=`${m.matches.exact||0} exact · ${m.matches.fuzzy||0} fuzzy`;
+  $("kAuto").textContent=m.auto_fixed;$("kAutoSub").textContent=rm(m.auto_fixed_amount)+" posted by policy";
+  $("kWait").textContent=m.awaiting_approval;$("kWaitSub").textContent=m.approved+" approved · "+m.rejected+" rejected";
+  $("kChecks").textContent=m.checks_passed+"/"+m.checks_total;$("kChecks").style.color=m.checks_passed===m.checks_total?"var(--green)":"var(--red)";
+  // crew
+  const last=a=>[...s.log].reverse().find(e=>e.agent===a&&!/^EXC-|^PASS|^FAIL|fuzzy match|→/.test(e.action));
+  const failed=s.audit.some(c=>!c.ok);
+  $("crew").innerHTML=AGENTS.map(([a,r])=>{const e=last(a)||{};const bad=a==="Auditor"&&failed;
+    return `<div class="agent"><div class="role">${r}</div><div class="who"><span class="dot ${bad?"fail":""}"></span>${a}</div><p>${esc(e.action||"")}${e.detail?" · <span style='color:var(--muted)'>"+esc(e.detail).slice(0,110)+"</span>":""}</p></div>`}).join("");
+  // queue
+  const open=s.exceptions.filter(x=>x.status==="open");
+  $("queueCount").textContent=open.length?open.length+" open":"";
+  $("queue").innerHTML=open.length?open.map(card).join(""):`<div class="empty">${m.status==="CLOSED"?"Nothing waiting. The month is closed and the books agree with the money to the cent.":"Nothing waiting."}</div>`;
+  // statement
+  const byc={};xs.forEach(x=>{(byc[x.cause]??=[]).push(x)});
+  let rows=`<tr><td>Net card income per processor</td><td class="num">${rm(m.processor_net)}</td></tr><tr><td>Card income per books</td><td class="num">${rm(m.ledger_before)}</td></tr><tr class="total"><td>Difference</td><td class="num">${rm(m.diff_before)}</td></tr>`;
+  for(const [c,l] of Object.entries(byc))rows+=`<tr><td>${esc(LABELS[c]||c)} <span style="color:var(--muted)">×${l.length}</span></td><td class="num">${rm(l.reduce((a,x)=>a+x.impact,0))}</td></tr>`;
+  rows+=`<tr class="total"><td>Explained</td><td class="num">${rm(xs.reduce((a,x)=>a+x.impact,0))}</td></tr><tr><td>Fixes posted</td><td class="num">${rm(s.fixes.reduce((a,f)=>a+f.amount,0))}</td></tr><tr class="total"><td>Remaining difference</td><td class="num">${rm(m.diff_after)}</td></tr>`;
+  $("stmt").innerHTML=rows;
+  // tabs
+  $("t-checks").innerHTML=s.audit.map(c=>`<div class="check"><span class="tag ${c.ok?"p":"f"}">${c.ok?"PASS":"FAIL"}</span><div><b>${esc(c.name)}</b><small>${esc(c.detail)}</small></div></div>`).join("")+`<p style="font-size:12.5px;color:var(--muted)">Policy sha256 <span class="mono">${s.policy.sha256.slice(0,16)}…</span> · run ${esc(s.run_id)}</p>`;
+  $("diff").innerHTML=esc(s.diff||"(no changes)").split("\n").map(l=>l.startsWith("+")&&!l.startsWith("+++")?`<span class="add">${l}</span>`:l.startsWith("-")&&!l.startsWith("---")?`<span class="del">${l}</span>`:l.startsWith("@@")?`<span class="hunk">${l}</span>`:l).join("\n");
+  $("allx").innerHTML=`<tr><th>id</th><th>cause</th><th class="num">impact</th><th>status</th><th>why</th></tr>`+s.exceptions.map(x=>`<tr><td class="mono">${x.id}</td><td>${esc(LABELS[x.cause]||x.cause)}</td><td class="num">${rm(x.impact)}</td><td><span class="st ${x.status}">${x.status.replace("_"," ")}</span></td><td style="font-size:12.5px">${esc(x.decision_reason)}</td></tr>`).join("");
+  $("log").textContent=s.log.map(e=>`${e.at.slice(11,19)}  ${e.agent.padEnd(12)} ${e.action}${e.detail?"\n                       "+e.detail:""}${e.verified?"\n                       ✓ "+e.verified:""}`).join("\n");
+  api("/api/report").then(t=>$("report").textContent=t).catch(()=>{});
+}
+function card(x){
+  const e=x.proposed_entry;
+  return `<div class="item"><div class="top"><span class="cause">${esc(LABELS[x.cause]||x.cause)}</span><span class="amt num">${rm(x.impact)}</span></div>
+  <div class="why">${esc(x.explanation)}</div>
+  ${e?`<div class="entry mono">+ ${esc(e.description)} · ${rm(e.amount)}</div>`:""}
+  ${x.action?`<div class="act">Then: ${esc(x.action)}</div>`:""}
+  <details><summary>Evidence (${x.evidence.length}) · ${esc(x.decision_reason)}</summary><ul>${x.evidence.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>
+  <div class="btns"><button class="ok" onclick="decide('${x.id}','approved',this)">Approve</button><button class="no" onclick="decide('${x.id}','rejected',this)">Reject</button><span class="id mono">${x.id}</span></div></div>`}
+async function decide(id,status,btn){
+  btn.disabled=true;
+  try{const r=await api("/api/decide",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id,status,by:$("who").value||"Owner"})});
+    render(r);toast(r.rolled_back?"Auditor objected. Decision rolled back.":`${status==="approved"?"Approved":"Rejected"} · Auditor re-checked ${r.summary.checks_passed}/${r.summary.checks_total}`+(r.action_result&&!r.action_result.startsWith("no ")?" · "+r.action_result:""))}
+  catch(e){toast(e.message);btn.disabled=false}}
+async function runCrew(){const b=$("runBtn");b.disabled=true;try{render(await api("/api/run",{method:"POST"}));toast("Crew ran end to end")}catch(e){toast(e.message)}b.disabled=false}
+async function resetDemo(){if(!confirm("Reseed the demo month and clear all decisions?"))return;try{render(await api("/api/reset",{method:"POST"}));toast("Demo reset")}catch(e){toast(e.message)}}
+$("tabs").addEventListener("click",e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));document.querySelectorAll(".tabpane").forEach(p=>p.classList.toggle("on",p.id==="t-"+t))});
+$("upForm").addEventListener("submit",async e=>{e.preventDefault();try{render(await api("/api/upload",{method:"POST",body:new FormData(e.target)}));toast("Crew ran on your files")}catch(err){toast(err.message)}});
+api("/api/state").then(render).catch(e=>toast(e.message));
+</script>
+</body>
+</html>

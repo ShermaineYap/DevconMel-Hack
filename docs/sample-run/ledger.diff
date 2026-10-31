@@ -1,0 +1,20 @@
+--- a/ledger.csv
++++ b/ledger_reconciled.csv
+@@ -121,3 +121,17 @@
+ LED-0120,2026-10-30,Sale ORD-10077 - Ravi Tan - Party tray,ORD-10077,19.40,sale,card,Ravi Tan
+ LED-0121,2026-10-30,Sale ORD-10078 - Hafiz Aziz - Onde-onde dozen,ORD-10078,202.00,sale,card,Hafiz Aziz
+ LED-0122,2026-10-30,Sale ORD-10103 - Nadia Aziz - Pandan cake,ORD-10103,23.30,sale,card,Nadia Aziz
++FIX-053EF53B,2026-10-31,"Card processing fees, po_4b0f39d234b9ae (32 txns)",po_4b0f39d234b9ae,-196.59,fee,card,applied by policy
++FIX-0BC5D70B,2026-10-31,"Card processing fees, pending:stripe (9 txns)",pending:stripe,-48.16,fee,card,applied by policy
++FIX-2A8AF88D,2026-10-31,Duplicate charge ch_9dc275c54898f4 on ORD-10002: refund owed to Jia Hui Rahman,ORD-10002,249.80,liability,card,applied by Owner
++FIX-7BE255E6,2026-10-31,Record missing sale ORD-10051 - Farid Hassan (ch_0c801f97b76843),ORD-10051,243.90,sale,card,applied by Owner
++FIX-84A88D8E,2026-10-31,Record missing sale ORD-10109 - Wei Ming Hassan (ch_d54dbcecc24b35),ORD-10109,201.80,sale,card,applied by Owner
++FIX-876F22A5,2026-10-31,"Card processing fees, po_dc2efcd1b237b5 (19 txns)",po_dc2efcd1b237b5,-88.51,fee,card,applied by policy
++FIX-95AE0C1D,2026-10-31,"Card processing fees, po_35755ade7c55dc (16 txns)",po_35755ade7c55dc,-100.52,fee,card,applied by policy
++FIX-9C1AF3BD,2026-10-31,"Correct ORD-10066: booked RM 76.00, received RM 67.00 (transposition)",ORD-10066,-9.00,adjustment,card,applied by Owner
++FIX-A11BC9C6,2026-10-31,"Card processing fees, po_1cad303877ebce (28 txns)",po_1cad303877ebce,-121.86,fee,card,applied by policy
++FIX-B379C568,2026-10-31,Duplicate charge ch_25d8d9f2b87f6e on ORD-10112: refund owed to Arjun Osman,ORD-10112,126.90,liability,card,applied by Owner
++FIX-CF312264,2026-10-31,Book refund ORD-10084 - Kar Wai Wong (re_6fa5ca9f7ac8cb),ORD-10084,-12.50,refund,card,applied by policy
++FIX-D280BC13,2026-10-31,Book refund ORD-10064 - Priya Menon (re_650e6e92df4978),ORD-10064,-181.20,refund,card,applied by Owner
++FIX-D888DDB1,2026-10-31,"Card processing fees, po_6fbf3eea29130a (21 txns)",po_6fbf3eea29130a,-106.19,fee,card,applied by policy
++FIX-ED63266E,2026-10-31,"Correct ORD-10034: booked RM 209.47, received RM 209.50 (rounding)",ORD-10034,0.03,adjustment,card,applied by policy

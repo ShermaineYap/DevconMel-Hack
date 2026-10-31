@@ -1,0 +1,30 @@
+# The owner's policy. This file is the ONLY place the agents get autonomy.
+# Anything not listed under auto_fix, or above its cap, waits for a human.
+# The Auditor records this file's sha256 on every run and checks every auto-fix against it.
+
+currency_symbol: RM
+
+auto_fix:
+  processor_fee:     { max: 200.00 }  # book card fees per payout automatically, up to RM 200 a batch
+  rounding:          { max: 0.05 }    # FX / rounding gaps of 5 sen or less
+  refund_not_booked: { max: 30.00 }   # small refunds already processed by the card processor
+
+# Always need a human (listed here for clarity; anything missing from auto_fix needs one anyway):
+#   missing_ledger_entry, duplicate_charge, transposition, amount_mismatch,
+#   ledger_without_payment, refund_without_processor, ambiguous_match,
+#   processor_adjustment, payout_missing, bank_unmatched_processor
+
+min_auto_confidence: 1.0   # fuzzy-matched items never auto-fix
+
+matching:
+  date_window_days: 2      # how far apart a booking and a payment may be
+  fuzzy_accept: 0.75       # minimum confidence to accept a fuzzy match
+  ambiguity_margin: 0.05   # if two candidates are this close, ask a human
+  rounding_max: 0.50       # same-order gaps up to this are treated as FX/rounding
+
+fees:                      # the rate the shop agreed with its processor
+  percent: 3.0
+  fixed: 1.00
+  tolerance: 0.01
+
+processor_keywords: [STRIPE]   # bank lines containing these are payouts to reconcile
