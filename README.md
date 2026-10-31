@@ -101,12 +101,16 @@ uvicorn app.server:app --reload # dashboard at http://localhost:8000
 - **Curveball rehearsal:** a TnG eWallet export plugs in through `sources.yaml` with no code change (`test_new_wallet_source_plugs_in_by_config`).
 
 ## How Mel is used
-See [`mel/MEL_PLAYBOOK.md`](mel/MEL_PLAYBOOK.md): the lead-agent orchestration prompts for parallel workers (one pane per agent/file set), MCP setup for Stripe, approvals config, diff review, the red-team pass, and the Sunday curveball prompt.
+The crew is **on duty inside Mel**: Mel's lead agent runs the close, parallel Mel workers independently re-check the
+Investigator's evidence, re-derive the Auditor's numbers and draft the owner's message, and **Mel's approval prompt is
+the human gate** before every `approve`. Mel was also used to build and harden it: parallel workers per module,
+Stripe via MCP (test mode), every edit reviewed as a diff, a red-team pass, and the Sunday curveball.
+Prompts: [`mel/MEL_PLAYBOOK.md`](mel/MEL_PLAYBOOK.md).
 
 ## Rules compliance
 | Hackathon rule | How |
 |---|---|
-| Runs live on realistic data | Public dashboard + seeded realistic month; upload tab for a real person's anonymised exports |
+| Runs live on realistic data | Public dashboard on a realistic fake month; "Generate a new random month" lets a tester throw unseen (fake) data at it |
 | Checks its own work | Auditor's 9 invariants after every action; 30 automated tests |
 | Knows its limits | Ambiguity, low confidence, rate anomalies, anything outside policy → human; failures → BLOCKED + rollback |
 | Human approves before money moves | No money ever moves by default; optional Stripe **test-mode** refund only after explicit approval |

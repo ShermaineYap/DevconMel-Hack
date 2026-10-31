@@ -143,7 +143,7 @@ form.up{display:grid;gap:10px;max-width:520px} form.up label{font-size:13px;disp
     <button data-t="all">All exceptions</button>
     <button data-t="log">Agent work log</button>
     <button data-t="report">Close report</button>
-    <button data-t="upload">Try your own files</button>
+    <button data-t="upload">Try another month</button>
   </nav>
   <div class="tabpane on" id="t-checks"></div>
   <div class="tabpane" id="t-diff"><pre id="diff"></pre></div>
@@ -152,9 +152,10 @@ form.up{display:grid;gap:10px;max-width:520px} form.up label{font-size:13px;disp
   <div class="tabpane" id="t-report"><pre class="wrap" id="report"></pre></div>
   <div class="tabpane" id="t-upload">
     <div class="panel">
-      <p style="margin-top:0">Run the crew on your own anonymised exports (same columns as the sample files in <span class="mono">data/</span>). Files replace the demo month on this server; use <b>Reset demo</b> to go back.</p>
+      <p style="margin-top:0"><b>Fake data only.</b> Generate a brand-new messy month and watch the crew handle it, or upload edited copies of the sample CSVs in <span class="mono">data/</span> (e.g. plant your own mistake). Never upload real customer or bank data.</p>
+      <p><button class="primary" type="button" onclick="newMonth()">Generate a new random month</button></p>
       <form class="up" id="upForm">
-        <label>Ledger CSV <input type="file" name="ledger" accept=".csv" required></label>
+        <label>Ledger CSV (fake) <input type="file" name="ledger" accept=".csv" required></label>
         <label>Processor balance transactions CSV <input type="file" name="processor" accept=".csv" required></label>
         <label>Bank statement CSV <input type="file" name="bank" accept=".csv" required></label>
         <div><button class="primary" type="submit">Run crew on my files</button></div>
@@ -231,6 +232,7 @@ async function decide(id,status,btn){
     render(r);toast(r.rolled_back?"Auditor objected. Decision rolled back.":`${status==="approved"?"Approved":"Rejected"} · Auditor re-checked ${r.summary.checks_passed}/${r.summary.checks_total}`+(r.action_result&&!r.action_result.startsWith("no ")?" · "+r.action_result:""))}
   catch(e){toast(e.message);btn.disabled=false}}
 async function runCrew(){const b=$("runBtn");b.disabled=true;try{render(await api("/api/run",{method:"POST"}));toast("Crew ran end to end")}catch(e){toast(e.message)}b.disabled=false}
+async function newMonth(){try{render(await api("/api/reset?seed="+Math.floor(Math.random()*1e6),{method:"POST"}));toast("New fake month generated and reconciled")}catch(e){toast(e.message)}}
 async function resetDemo(){if(!confirm("Reseed the demo month and clear all decisions?"))return;try{render(await api("/api/reset",{method:"POST"}));toast("Demo reset")}catch(e){toast(e.message)}}
 $("tabs").addEventListener("click",e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));document.querySelectorAll(".tabpane").forEach(p=>p.classList.toggle("on",p.id==="t-"+t))});
 $("upForm").addEventListener("submit",async e=>{e.preventDefault();try{render(await api("/api/upload",{method:"POST",body:new FormData(e.target)}));toast("Crew ran on your files")}catch(err){toast(err.message)}});

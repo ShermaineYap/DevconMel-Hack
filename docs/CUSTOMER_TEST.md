@@ -13,7 +13,9 @@ Send them the public dashboard link. Ask them to:
 1. Read the top summary and say what they think happened this month.
 2. Open one item under **Needs your decision**, read the evidence, and approve or reject it.
 3. Look at **Ledger diff**.
-(Optional: if they're comfortable, anonymise a small export of their own and use **Try your own files**.)
+4. Open **Try another month** and press *Generate a new random month* to see the crew handle data it has never seen.
+
+**Fake data only** (track rule): never ask them to upload real sales or bank exports. Their real experience goes in the conversation, not the files.
 
 ## After (1 minute)
 - "Would you trust this to fix the small things on its own? Which caps would you set?"

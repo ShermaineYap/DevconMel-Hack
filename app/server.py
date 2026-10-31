@@ -117,7 +117,7 @@ def reset(seed: int = 42, x_token: str | None = Header(None), token: str | None 
 @app.post("/api/upload")
 async def upload(ledger: UploadFile = File(...), processor: UploadFile = File(...), bank: UploadFile = File(...),
                  x_token: str | None = Header(None), token: str | None = Query(None)) -> JSONResponse:
-    """Let a real person try it on their own (anonymised) exports in the default column format."""
+    """Run the crew on edited copies of the sample CSVs. Fake data only (track rule): never real customer data."""
     _auth(x_token or token)
     blobs = {}
     for name, f in (("ledger.csv", ledger), ("stripe_balance_transactions.csv", processor),

@@ -9,6 +9,34 @@ while you record, and screenshot each one for the submission.
 
 ---
 
+## 0. The crew on duty, inside Mel (show this in the demo)
+The brief says *"build a team of AI agents **in Mel** that does a real job"*. So the month-end close itself is
+run by Mel agents: the Python package is their toolbox, Mel's lead agent is the manager, Mel's parallel panes are
+the crew, and **Mel's approval prompt is the human gate** before any ledger change. Use `/orchestrate-agent`:
+
+```
+You are the month-end close team for a small kuih & coffee shop (fake data, Stripe test mode).
+Read mel/PROJECT_BRIEF.md. Never edit policy.yaml or data/ledger.csv.
+
+Lead: run `python -m closecrew run`, then split the review across three workers in parallel:
+
+1. Investigator worker: read state/latest.json. For the 3 largest open exceptions, open the cited rows in
+   data/*.csv yourself and confirm the cause and amount are right. Report any disagreement.
+2. Auditor worker: independently of the others, recompute (sum of Stripe net) - (sum of card rows in
+   data/ledger.csv) with a short script and confirm it equals the "difference before" in state/latest.json.
+   Then run `python -m pytest -q`. Report pass/fail with numbers.
+3. Explainer worker: read state/close_report.md and write a 5-line WhatsApp-style message to the owner
+   explaining what happened this month in plain words, using only numbers from the report.
+
+Then, as lead: show me each open item one by one (cause, amount, evidence). For each one I approve, run
+`python -m closecrew approve <EXC-ID> --by <my name>`; for each I reject, run
+`python -m closecrew reject <EXC-ID> --by <my name> --note "<my reason>"`.
+Never run approve or reject without my explicit yes. After each decision, check that the Auditor still
+shows 9/9; if not, stop and tell me. Finish by running `python -m closecrew run` and summarising.
+```
+With approvals on (§1), Mel pauses before each `approve` command, so a human signs off every change.
+That clip covers *agents in Mel*, *parallel*, *approvals*, *checks its own work* and *knows its limits* at once.
+
 ## 1. Approvals (do this first)
 In Mel's settings, set approvals so that **every shell command that writes outside the repo, every `git push`,
 and every edit to `policy.yaml` asks you first**. Edits inside `closecrew/`, `tests/`, `docs/` can show as diffs
