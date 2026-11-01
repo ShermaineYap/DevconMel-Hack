@@ -1,3 +1,5 @@
+> Superseded by `BUILD_FROM_SCRATCH.md` for the hackathon build. Commands below refer to the old prototype.
+
 # Using Mel on CloseCrew
 
 "Use of Mel" is 20% of the score. Judges look for: **agents working in parallel, reviewing edits as diffs,

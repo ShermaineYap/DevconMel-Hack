@@ -5,14 +5,19 @@ Submit the **Mel-built repo**, not this prototype (see `mel/BUILD_FROM_SCRATCH.m
 
 Deadline: **Sunday Nov 1, 2:00 PM EST = Monday Nov 2, 3:00 AM Malaysia time.** Aim to submit by 1:30 AM MYT.
 
-## Checklist (the 6 required items)
-- [ ] **Live link** (Render URL) and the **repository Mel built**
-- [ ] **Demo video ≤ 3 min** (YouTube unlisted / Loom) — script in `docs/DEMO_SCRIPT.md`
-- [ ] **Agent work log** — `docs/sample-run/AGENT_LOG.md` (and the live one at `/download/AGENT_LOG.md`)
-- [ ] **Proof tests passed** — screenshot of `python -m pytest -q` + Auditor 9/9 tab
-- [ ] **Customer reaction** — clip or quote with permission (`docs/CUSTOMER_TEST.md`)
-- [ ] **Mel feedback form** (5 min)
-- [ ] Sunday curveball shipped and mentioned below
+## Checklist (from globalaihackathon.com/rules)
+- [ ] Builder name, contact email, track: Agentic Banking, Finance & Payments
+- [ ] **Public repo**: https://github.com/ShermaineYap/closecrew (Mel-built)
+- [ ] **Live deployed link** (Render)
+- [ ] **Mel session recording** (video ≤ 5 min) — REQUIRED, no recording = not accepted
+- [ ] Mel session export .zip (⋯ → Export conversation → tick both → save)
+- [ ] **Demo video ≤ 5 min** (include customer reaction + passing tests)
+- [ ] **Description ≤ 300 characters**
+- [ ] Up to 3 attachments: agent work log, test output screenshot, customer quote
+- [ ] Four Mel ratings + consent box
+- [ ] Sunday curveball shipped
+
+> The write-up below describes the old prototype. Rewrite it from what **Mel** actually builds.
 
 ---
 
