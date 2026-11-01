@@ -1,5 +1,9 @@
 # CloseCrew — Agents on Duty for month-end close
 
+> **Status: reference prototype, not the hackathon submission.** The rules require projects to be built from A to Z
+> with Mel. This prototype was written outside Mel to explore the design. The submission is rebuilt from an empty
+> folder in Mel using [`mel/SPEC.md`](mel/SPEC.md) and [`mel/BUILD_FROM_SCRATCH.md`](mel/BUILD_FROM_SCRATCH.md).
+
 **Track:** Agentic Banking, Finance & Payments · *the Reconciliation Agent*
 **Hackathon:** Global AI Hackathon – Devcon 2026 by Mel ("Agents on Duty")
 
